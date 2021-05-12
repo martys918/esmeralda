@@ -1,0 +1,14 @@
+name: 'Request Reviewers with Added Label'
+description: ''
+author: 'marty-s-miyake'
+inputs:
+  github-token:
+    description: 'GITHUB_TOKEN'
+    required: true
+  request_reviewers:
+    description: 'pull request reviewer list.'
+    required: true
+    default: '.github/workflows/esmeralda/pr_reviewers.json'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
