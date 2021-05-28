@@ -16,7 +16,13 @@ const pull_request_author = () => {
 
 const request_reviewers = () => {
   const path = core.getInput('request_reviewers')
-  return JSON.parse(fs.readFileSync(path, 'utf8'))[labeled().name]
+  const reviewers = JSON.parse(fs.readFileSync(path, 'utf8'))
+  if (labeled().name in reviewers) {
+    return reviewers[labeled().name]
+  }
+  else {
+    return []
+  }
 }
 
 const repository = () => {
