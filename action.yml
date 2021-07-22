@@ -9,6 +9,9 @@ inputs:
     description: 'pull request reviewer list.'
     required: true
     default: '.github/workflows/esmeralda/pr_reviewers.json'
+  slack_wehbook:
+    description: 'slack incoming webhook url.'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'

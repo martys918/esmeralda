@@ -43,4 +43,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           request_reviewers: .github/workflows/esmeralda/pr_reviewers.json
+          slack_wehbook: ${{ secrets.SLACK_WEBHOOK_URL }} # Optional
 ```
