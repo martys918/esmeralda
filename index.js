@@ -37,12 +37,26 @@ const repository = () => {
   }
 }
 
+const fisher_yates_shuffle = ([...array]) => {
+  for (let i = array.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array
+}
+
+const draft_reviewers = () => {
+  return fisher_yates_shuffle(request_reviewers())
+    .filter(n => n !== pull_request_author())
+    .slice(0, core.getInput('number_of_reviewers'))
+}
+
 const run = async () => {
   try {
     const webhook = core.getInput('slack_wehbook')
     const token = core.getInput('github-token')
     const octokit = github.getOctokit(token)
-    const reviewers = request_reviewers().filter(n => n !== pull_request_author())
+    const reviewers = draft_reviewers()
 
     await octokit.pulls.requestReviewers({
       owner: repository().owner,
