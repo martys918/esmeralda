@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Assign
-        uses: MxShun/esmeralda@master
+        uses: MxShun/esmeralda@feature/validation
         # uses: marty-s-miyake/esmeralda@1.0.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
