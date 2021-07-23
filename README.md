@@ -44,5 +44,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           request_reviewers: .github/workflows/esmeralda/pr_reviewers.json
           number_of_reviewers: 2 # Optional (Default: 15)
-          slack_wehbook: ${{ secrets.SLACK_WEBHOOK_URL }} # Optional
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK_URL }} # Optional
 ```

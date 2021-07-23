@@ -688,7 +688,7 @@ const draft_reviewers = () => {
 
 const run = async () => {
   try {
-    const webhook = core.getInput('slack_wehbook')
+    const webhook = core.getInput('slack_webhook')
     const token = core.getInput('github-token')
     const octokit = github.getOctokit(token)
     const reviewers = draft_reviewers()

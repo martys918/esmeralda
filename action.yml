@@ -13,7 +13,7 @@ inputs:
     description: 'number of request reviewers (up to 15).'
     required: false
     default: 15
-  slack_wehbook:
+  slack_webhook:
     description: 'slack incoming webhook url.'
     required: false
 runs:
