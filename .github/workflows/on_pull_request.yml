@@ -16,4 +16,4 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           request_reviewers: .github/workflows/pr_reviewers.json
-          number_of_reviewers: -1
+          number_of_reviewers: 16
