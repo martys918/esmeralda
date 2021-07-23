@@ -679,9 +679,11 @@ const fisher_yates_shuffle = ([...array]) => {
 }
 
 const draft_reviewers = () => {
+  const number = core.getInput('number_of_reviewers')
+  const validatedNumber = (number >= 0 && number <= 15) ? number : 15
   return fisher_yates_shuffle(request_reviewers())
     .filter(n => n !== pull_request_author())
-    .slice(0, core.getInput('number_of_reviewers'))
+    .slice(0, validatedNumber)
 }
 
 const run = async () => {
